@@ -135,7 +135,7 @@ You can test the server using the MCP Inspector or any MCP client:
 
 ```bash
 # Start the server
-python mcp/server.py
+python3 kedi_mcp/server.py
 
 # In another terminal, use MCP client to test
 ```
@@ -157,7 +157,7 @@ The server respects Kedi environment variables:
 Check that all dependencies are installed:
 
 ```bash
-pip install fastmcp kedi
+pip install fastmcp kedi-mcp
 ```
 
 ## License
