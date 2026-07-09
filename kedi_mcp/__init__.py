@@ -1,1 +1,0 @@
-"""Kedi MCP Server Package"""

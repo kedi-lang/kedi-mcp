@@ -4,17 +4,58 @@ build-backend = "hatchling.build"
 
 [project]
 name = "kedi-mcp"
-version = "0.1.1"
-description = "MCP Server for Kedi SDK"
+version = "0.1.0"
+description = "MCP server for Kedi"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "fastmcp",
-    "kedi",
+    "fastmcp>=2.0.0",
+    "kedi>=0.3.0",
+    "pydantic>=2",
 ]
 
 [project.scripts]
-kedi-mcp = "kedi_mcp.server:main"
+kedi-mcp = "kedi_mcp.__main__:main"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/README.md",
+    "/src/kedi_mcp",
+    "/tests",
+    "/install.sh",
+]
 
 [tool.hatch.build.targets.wheel]
-packages = ["kedi_mcp"]
+packages = [
+    "src/kedi_mcp",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["kedi_mcp"]
+
+[tool.coverage.report]
+exclude_also = [
+    "if TYPE_CHECKING:",
+    "\\s*\\.\\.\\.\\s*(#.*)?$",
+]
+
+[tool.basedpyright]
+include = ["src", "tests"]
+extraPaths = ["src"]
+pythonVersion = "3.11"
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.39.6",
+    "pytest>=8.2",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.16",
+]
