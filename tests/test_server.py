@@ -5,18 +5,13 @@ from pathlib import Path
 from typing import Any
 
 import anyio
-from fastmcp import FastMCP
-from kedi.lang.ast import ModuleExport, ModuleImport
-
 import kedi_mcp.__main__ as dunder_main
+from fastmcp import FastMCP
 from kedi_mcp import server as server_module
-from kedi_mcp.server import (
-    _export_names,
-    _import_name,
-    _runtime_args,
-    _span_payload,
-    create_server,
-)
+from kedi_mcp.server import (_export_names, _import_name, _runtime_args,
+                             _span_payload, create_server)
+
+from kedi.lang.ast import ModuleExport, ModuleImport
 
 
 async def _get_tool(server: FastMCP, name: str) -> Any:

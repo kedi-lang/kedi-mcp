@@ -10,19 +10,17 @@ from pathlib import Path
 from typing import Any, Literal
 
 from fastmcp import FastMCP
-from kedi.app import CliArgs, run_evals_cli, run_program_cli, run_source_cli, run_tests_cli
+from pydantic import BaseModel, Field
+
+from kedi.app import (CliArgs, run_evals_cli, run_program_cli, run_source_cli,
+                      run_tests_cli)
 from kedi.error_rendering import render_parse_error
-from kedi.lang import compile_program, parse_program, program_procedure_json_schemas
-from kedi.lang.ast import (
-    ModuleExport,
-    ModuleImport,
-    Program,
-    ProgramWithValidation,
-    Span,
-)
+from kedi.lang import (compile_program, parse_program,
+                       program_procedure_json_schemas)
+from kedi.lang.ast import (ModuleExport, ModuleImport, Program,
+                           ProgramWithValidation, Span)
 from kedi.lang.parser.diagnostics import KediDiagnostic, KediParseError
 from kedi.utils import parse_args
-from pydantic import BaseModel, Field
 
 ToolKind = Literal["health", "parse", "compile", "schema", "run", "test", "eval"]
 
