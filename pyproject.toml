@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling==1.32.0"]
 build-backend = "hatchling.build"
 
 [project]
@@ -9,9 +9,9 @@ description = "MCP server for Kedi"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "fastmcp>=2.0.0",
-    "kedi>=0.3.0",
-    "pydantic>=2",
+    "fastmcp==3.4.7",
+    "kedi>=0.4,<0.5",
+    "pydantic>=2.13.4,<2.14",
 ]
 
 [project.scripts]
@@ -29,6 +29,9 @@ include = [
 packages = [
     "src/kedi_mcp",
 ]
+
+[tool.uv.sources]
+kedi = { path = "..", editable = true }
 
 [tool.ruff]
 line-length = 100
@@ -54,8 +57,8 @@ pythonVersion = "3.11"
 
 [dependency-groups]
 dev = [
-    "basedpyright>=1.39.6",
-    "pytest>=8.2",
-    "pytest-cov>=7.1.0",
-    "ruff>=0.15.16",
+    "basedpyright==1.39.9",
+    "pytest==9.1.1",
+    "pytest-cov==7.1.0",
+    "ruff==0.15.20",
 ]
