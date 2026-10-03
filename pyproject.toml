@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "MCP server for Kedi"
 readme = "README.md"
 requires-python = ">=3.10"
+license = "Apache-2.0"
 dependencies = [
     "fastmcp==3.4.7",
     "kedi>=0.4,<0.5",
@@ -17,9 +18,14 @@ dependencies = [
 [project.scripts]
 kedi-mcp = "kedi_mcp.__main__:main"
 
+[project.urls]
+Repository = "https://github.com/kedi-lang/kedi-mcp"
+Issues = "https://github.com/kedi-lang/kedi-mcp/issues"
+
 [tool.hatch.build.targets.sdist]
 include = [
     "/README.md",
+    "/LICENSE",
     "/src/kedi_mcp",
     "/tests",
     "/install.sh",
