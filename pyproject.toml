@@ -7,7 +7,7 @@ name = "kedi-mcp"
 version = "0.1.0"
 description = "MCP server for Kedi"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = "Apache-2.0"
 # PyPI shows the Author field in full but only the first address of Author-email, so names and
 # addresses are separate entries.
@@ -19,8 +19,8 @@ authors = [
 ]
 dependencies = [
     "fastmcp==3.4.7",
-    "kedi>=0.4,<0.5",
-    "pydantic>=2.13.4,<2.14",
+    "kedi>=0.1.5,<0.2",
+    "pydantic>=2.14.3,<2.15",
 ]
 
 [project.scripts]

@@ -4,7 +4,12 @@
 
 ## Install
 
-From a Kedi workspace with this repository checked out as `kedi-mcp/`:
+```bash
+uv tool install kedi-mcp
+```
+
+To work from source, run the installer from a Kedi workspace with this repository checked out as
+`kedi-mcp/`:
 
 ```bash
 ./kedi-mcp/install.sh
@@ -21,7 +26,7 @@ Kedi source checkout instead of its default parent directory:
 KEDI_INSTALL_SPEC=/path/to/kedi ./install.sh
 ```
 
-Requires Python 3.10+ and Kedi `>=0.4,<0.5`. The installer creates user-level
+Requires Python 3.11+ and Kedi `>=0.1.5,<0.2`. The installer creates user-level
 tool environments; it does not install into the currently activated virtual
 environment.
 
